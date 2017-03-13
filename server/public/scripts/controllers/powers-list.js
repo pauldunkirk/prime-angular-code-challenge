@@ -1,22 +1,22 @@
-HeroApp.controller('PowersListController', ['PowersFactory', function(PowersFactory){
+HeroApp.controller('PowersListController', ['HeroFactory', function(HeroFactory){
     console.log('Powers List Controller loaded');
 
   var self = this;
 
 
-  self.powersList = PowersFactory.allPowers;
-  console.log(PowersFactory.allPowers);
+  self.powersList = HeroFactory.allPowers;
+  console.log(HeroFactory.allPowers);
   // console.log(PowersFactory);
   // console.log(self);
   console.log(self.Powerslist);
 
 
   self.editPowers = function() {
-    PowersFactory.editPowers(self.editPowers);
+    HeroFactory.editPowers(self.editPowers);
   }
 
   self.deletePowers = function(powersId) {
-    PowersFactory.deletePowers(powersId);
+    HeroFactory.deletePowers(powersId);
   }
 
   }]);

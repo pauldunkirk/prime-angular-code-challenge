@@ -11,6 +11,11 @@ HeroApp.config(['$routeProvider', function($routeProvider) {
       controller: 'PowersListController',
       controllerAs: 'plc'
     })
+    .when('/addHero', {
+      templateUrl: '/views/addHero-list.html',
+      controller: 'AddHeroesController',
+      controllerAs: 'ahc'
+    })
     .otherwise({
       redirectTo: 'heroList'
     })

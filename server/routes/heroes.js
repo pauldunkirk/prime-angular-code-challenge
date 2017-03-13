@@ -10,6 +10,7 @@ router.get('/', function (req, res) {
         .then(function (result) {
           client.release();
           res.send(result.rows);
+          console.log(result.rows);
         })
         .catch(function (err) {
           console.log('error on SELECT', err);

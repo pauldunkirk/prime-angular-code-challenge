@@ -4,6 +4,8 @@ HeroApp.controller('HeroListController', ['HeroFactory', function(HeroFactory){
   var self = this;
 
 
+
+
   self.heroList = HeroFactory.allHeroes;
   console.log(HeroFactory.allHeroes);
   // console.log(HeroFactory);

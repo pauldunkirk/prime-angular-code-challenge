@@ -2,6 +2,13 @@
     Each hero in the listing needs to be able to be deleted from the system in the event of their unfortunate demise.</p> -->
 
 <body ng-controller="HomeController">
+  <form ng-submit="hlc.addEmp()" class="header">
+    <input  ng-model="hlc.newHero.persona" placeholder="Persona">
+    <input  ng-model="hlc.newHero.alias" placeholder="Alias">
+    <input  ng-model="hlc.newHero.power_id" placeholder="Power ID">
+
+    <button ng-click="hlc.addHero()" class="btn-primary" type="button" name="button" id="submit">Add New Hero</button>
+    </form>
 
 <table class="table">
           <thead>
@@ -13,7 +20,7 @@
                   <td>{{hero.power_id}}</td>
                   <td>{{hero.name}}</td>
                   <td>{{hero.description}}</td>
-                  <td><button ng-click="hlc.deletehero(hero.id)" class="btn-danger">Delete</button></td>
+                  <td><button ng-click="hlc.deleteHero(hero.id)" class="btn-danger">Delete</button></td>
               </tr>
           </tbody>
       </table>

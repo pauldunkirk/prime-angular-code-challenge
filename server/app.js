@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var path = require('path');
-var powers = require('./routes/superpowers.js');
+var powers = require('./routes/powers.js');
 var heroes = require('./routes/heroes.js');
 var bodyParser = require('body-parser');
 

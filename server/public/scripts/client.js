@@ -6,6 +6,10 @@ HeroApp.config(['$routeProvider', function($routeProvider) {
       templateUrl: '/views/hero-list.html',
       controller: 'HeroListController',
       controllerAs: 'hlc'
+    }).when('/powersList', {
+      templateUrl: '/views/powers-list.html',
+      controller: 'PowersListController',
+      controllerAs: 'plc'
     })
     .otherwise({
       redirectTo: 'heroList'

@@ -1,0 +1,14 @@
+<body ng-controller="PowersListController">
+
+<table class="table">
+          <thead>
+          </thead>
+          <tbody>
+              <tr ng-repeat="power in plc.heroList.list">
+                  <td>{{power.name}}</td>
+                  <td>{{power.description}}</td>
+                  <td><button ng-click="plc.deletePowers(hero.id)" class="btn-danger">Delete</button></td>
+              </tr>
+          </tbody>
+      </table>
+</body>

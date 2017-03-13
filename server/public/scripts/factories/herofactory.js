@@ -1,8 +1,10 @@
 HeroApp.factory('HeroFactory', ['$http', function($http) {
 
   var allHeroes = { list: [] };
-
+  var allPowers = { list: [] };
   getHeroes();
+  getPowers();
+
 
   function getHeroes() {
     $http({
@@ -12,6 +14,27 @@ HeroApp.factory('HeroFactory', ['$http', function($http) {
       console.log('response from factory: ', response);
       console.log('response.data from factory: ', response.data);
       allHeroes.list = response.data;
+    });
+  }
+
+
+  function getPowers() {
+    $http({
+      method: 'GET',
+      url: '/powers'
+    }).then(function(response) {
+      console.log('response from factory: ', response);
+      console.log('response.data from factory: ', response.data);
+      allPowers.list = response.data;
+    });
+  }
+
+  function deletePowers(heroId){
+    $http({
+      method: 'DELETE',
+      url: '/heroes/' + heroId
+    }).then(function(response) {
+      getPowers();
     });
   }
 
@@ -27,6 +50,7 @@ HeroApp.factory('HeroFactory', ['$http', function($http) {
 
   return {
     allHeroes: allHeroes,
+    allPowers: allPowers,
     // updateheros: getHeroes,
     // addhero: addhero,
     deleteHero: deleteHero
